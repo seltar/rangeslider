@@ -1,0 +1,29 @@
+{
+  "name": "rangeslider",
+  "title": "Rangeslider",
+  "description": "Improved range slider",
+  "version": "0.1.0",
+  "homepage": "https://github.com/seltar/rangeslider",
+  "author": {
+    "name": "Yonas Sandbæk",
+    "email": "yonas.sandbaek@creuna.no",
+    "url": "creuna.no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/seltar/rangeslider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seltar/rangeslider/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/seltar/rangeslider/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
