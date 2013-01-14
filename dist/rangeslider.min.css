@@ -1,0 +1,1 @@
+input[type='range']{-webkit-appearance:none;width:280px;height:46px;padding:3px;-webkit-border-radius:15px;border-radius:15px;border:1px solid #525252;background-image:-webkit-gradient( linear,left top,left bottom,color-stop(0,#000),color-stop(1,#222) )}input[type='range']::-webkit-slider-thumb{-webkit-appearance:none;background-color:#444;width:15px;height:20px}

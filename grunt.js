@@ -8,21 +8,32 @@ module.exports = function(grunt) {
       banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
         '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
         '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
+        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> - <%= pkg.author.email %> - <%= pkg.author.website %>\n' +
+        '* Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
     },
     concat: {
-      dist: {
+      js: {
         src: ['<banner:meta.banner>', '<file_strip_banner:src/<%= pkg.name %>.js>'],
         dest: 'dist/<%= pkg.name %>.js'
+      },
+      css: {
+        src: 'src/*.css',
+        dest: 'dist/<%= pkg.name %>.css'
       }
     },
     min: {
-      dist: {
-        src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
+      js: {
+        src: ['<banner:meta.banner>', '<config:concat.js.dest>'],
         dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
+    mincss: {
+      compress: {
+        files: {
+          'dist/<%= pkg.name %>.min.css': ['<config:concat.css.dest>']
+        }
+      }
+    },    
     qunit: {
       files: ['test/**/*.html']
     },
@@ -54,7 +65,9 @@ module.exports = function(grunt) {
     uglify: {}
   });
 
+  grunt.loadNpmTasks('grunt-contrib-mincss');
+
   // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', 'lint qunit concat min mincss');
 
 };

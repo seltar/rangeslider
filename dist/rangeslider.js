@@ -1,10 +1,7 @@
-/*
- * rangeslider
- * https://github.com/seltar/rangeslider
- *
- * Copyright (c) 2013 Yonas Sandbæk
- * Licensed under the MIT license.
- */
+/*! Rangeslider - v0.1.0 - 2013-01-14
+* https://github.com/seltar/rangeslider
+* Copyright (c) 2013 Yonas Sandbæk - yonas.sandbaek@creuna.no - 
+* Licensed MIT */
 
 ;(function ( $, window, document, undefined ) {
     
